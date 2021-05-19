@@ -2,7 +2,7 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/lPMz7-QlJ
 
 ###
 
@@ -10,15 +10,37 @@ POST http://localhost:3000/users
 content-type: application/json
 
 {
-  "name": "jeanpier"
+  "email": "ronaldo@email.com",
+  "password": "123",
+  "firstName": "Ronaldo",
+  "lastName": "Gualpa",
+  "permissionLevel": 1,
+  "extra": "extra"
 }
 
 ###
 
-PUT http://localhost:3000/users/1
+PUT http://localhost:3000/users/lPMz7-QlJ
+content-type: application/json
+
+{
+  "email": "ronaldo@email.com",
+  "password": "123",
+  "firstName": "Ronaldo",
+  "lastName": "Gualpa"
+}
 
 ###
 
-DELETE http://localhost:3000/users/1
+PATCH http://localhost:3000/users/lPMz7-QlJ
+content-type: application/json
+
+{
+  "firstName": "Guido"
+}
+
+###
+
+DELETE http://localhost:3000/users/lPMz7-QlJ
 
 ###
