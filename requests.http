@@ -2,7 +2,7 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/lPMz7-QlJ
+GET http://localhost:3000/users/xIg421jbn
 
 ###
 
@@ -20,19 +20,19 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:3000/users/lPMz7-QlJ
+PUT http://localhost:3000/users/xIg421jbn
 content-type: application/json
 
 {
   "email": "ronaldo@email.com",
-  "password": "123",
+  "password": "1234",
   "firstName": "Ronaldo",
   "lastName": "Gualpa"
 }
 
 ###
 
-PATCH http://localhost:3000/users/lPMz7-QlJ
+PATCH http://localhost:3000/users/xIg421jbn
 content-type: application/json
 
 {
@@ -41,6 +41,6 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/users/lPMz7-QlJ
+DELETE http://localhost:3000/users/xIg421jbn
 
 ###
