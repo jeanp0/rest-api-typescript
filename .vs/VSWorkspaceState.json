@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\dist",
+    "\\users",
+    "\\users\\dao",
+    "\\users\\dto"
+  ],
+  "SelectedNode": "\\users\\users.routes.config.ts",
+  "PreviewInSolutionExplorer": false
+}
