@@ -10,12 +10,10 @@ POST http://localhost:3000/users
 content-type: application/json
 
 {
-  "email": "ronaldo@email.com",
+  "email": "jeanpier@email.com",
   "password": "123",
-  "firstName": "Ronaldo",
-  "lastName": "Gualpa",
-  "permissionLevel": 1,
-  "extra": "extra"
+  "firstName": "Luis",
+  "lastName": "Mendoza"
 }
 
 ###

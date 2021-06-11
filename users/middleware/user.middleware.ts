@@ -5,19 +5,19 @@ import userService from "../services/user.service";
 const log: debug.IDebugger = debug("app:users-controller");
 
 class UserMiddleware {
-  async validateRequiredBodyFields(
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction
-  ) {
-    if (req.body && req.body.email && req.body.password) {
-      next();
-    } else {
-      res.status(400).send({
-        error: `Missing required fields email and/or password`,
-      });
-    }
-  }
+  // async validateRequiredBodyFields(
+  //   req: express.Request,
+  //   res: express.Response,
+  //   next: express.NextFunction
+  // ) {
+  //   if (req.body && req.body.email && req.body.password) {
+  //     next();
+  //   } else {
+  //     res.status(400).send({
+  //       error: `Missing required fields email and/or password`,
+  //     });
+  //   }
+  // }
 
   async validateSameEmailDoesntExist(
     req: express.Request,
