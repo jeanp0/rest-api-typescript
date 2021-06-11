@@ -2,7 +2,17 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/ZxfguJjvD
+GET http://localhost:3000/users/7KfCCD-0L
+
+###
+
+POST http://localhost:3000/auth
+content-type: application/json
+
+{
+  "password": "12345",
+  "email": "jeanpierm@email.com"
+}
 
 ###
 
@@ -10,8 +20,8 @@ POST http://localhost:3000/users
 content-type: application/json
 
 {
-  "email": "jeanpier@email.com",
-  "password": "123",
+  "email": "jeanpierm@email.com",
+  "password": "12345",
   "firstName": "Luis",
   "lastName": "Mendoza"
 }

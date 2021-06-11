@@ -67,6 +67,12 @@ class UsersDao {
     return this.User.deleteOne({ _id: userId }).exec();
   }
 
+  async getUserByEmailWithPassword(email: string) {
+    return this.User.findOne(
+      { email },
+      "_id email permissionFlags password"
+    ).exec();
+  }
   // users: Array<CreateUserDto> = [];
   // async addUser(user: CreateUserDto) {
   //   user.id = shortid.generate();
