@@ -2,7 +2,7 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/7KfCCD-0L
+GET http://localhost:3000/users/IBcYOjFzV
 
 ###
 
@@ -12,6 +12,16 @@ content-type: application/json
 {
   "password": "12345",
   "email": "jeanpierm@email.com"
+}
+
+###
+
+POST http://localhost:3000/auth/refresh-token
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJJQmNZT2pGelYiLCJlbWFpbCI6ImplYW5waWVybUBlbWFpbC5jb20iLCJwZXJtaXNzaW9uRmxhZ3MiOjEsInJlZnJlc2hLZXkiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOlsyMDAsMTA0LDk2LDIxMiwxNTMsNDcsMjQ3LDI0MSw1OSwyNTIsMjQxLDE2Miw1NiwzNCwxMzUsODVdfSwiaWF0IjoxNjIzNDM5NTAwLCJleHAiOjE2MjM0NzU1MDB9.uznWY9LQzwxY-AoPWBpgSZqQGoZdBDB731QHQotJ3oM
+
+{
+  "refreshToken": "Sgk4INQFpz2qt5AO4hLv2pAgxjUzN3+vjcId+Ho6fAjeL7NF0Ufgtf0BbtopSEXsluvgiZKK3yQ+0NzC/aOOJw=="
 }
 
 ###
