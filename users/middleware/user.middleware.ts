@@ -37,7 +37,8 @@ class UserMiddleware {
     res: express.Response,
     next: express.NextFunction
   ) {
-    const user = await userService.getUserByEmail(req.body.email);
+    const user =
+      res.locals.user || (await userService.getUserByEmail(req.body.email));
     if (user && user._id === req.params.userId) {
       next();
     } else {
@@ -66,6 +67,7 @@ class UserMiddleware {
   ) {
     const user = await userService.readById(req.params.userId);
     if (user) {
+      res.locals.user = user;
       next();
     } else {
       res.status(404).send({
@@ -80,6 +82,22 @@ class UserMiddleware {
     next: express.NextFunction
   ) {
     req.body.id = req.params.userId;
+    next();
+  }
+
+  async userCantChangePermission(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ) {
+    if (
+      "permissionFlags" in req.body &&
+      req.body.permissionFlags !== res.locals.user.permissionFlags
+    ) {
+      return res
+        .status(400)
+        .send({ errors: ["User cannot change permissionFlags"] });
+    }
     next();
   }
 }

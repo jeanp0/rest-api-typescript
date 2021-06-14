@@ -4,6 +4,9 @@ import BodyValidationMiddleware from "../common/middleware/body.validation.middl
 import UserController from "./controllers/user.controller";
 import UserMiddleware from "./middleware/user.middleware";
 import { body } from "express-validator";
+import jwtMiddleware from "../auth/middleware/jwt.middleware";
+import permissionMiddleware from "../common/middleware/common.permission.middleware";
+import { PermissionFlag } from "../common/middleware/common.permissionflag.enum";
 
 export class UserRoutes extends CommonRoutesConfig {
   constructor(app: express.Application) {
@@ -13,7 +16,13 @@ export class UserRoutes extends CommonRoutesConfig {
   configureRoutes(): express.Application {
     this.app
       .route(`/users`)
-      .get(UserController.list)
+      .get(
+        jwtMiddleware.validJWTNeeded,
+        permissionMiddleware.permissionFlagsRequired(
+          PermissionFlag.ADMIN_PERMISSION
+        ),
+        UserController.list
+      )
       .post(
         body("email").isEmail(),
         body("password")
@@ -28,7 +37,11 @@ export class UserRoutes extends CommonRoutesConfig {
 
     this.app
       .route(`/users/:userId`)
-      .all(UserMiddleware.validateUserExists)
+      .all(
+        UserMiddleware.validateUserExists,
+        jwtMiddleware.validJWTNeeded,
+        permissionMiddleware.onlySameUserOrAdminCanDoThisAction
+      )
       .get(UserController.getById)
       .delete(UserController.removeById);
 
@@ -42,6 +55,10 @@ export class UserRoutes extends CommonRoutesConfig {
       body("permissionFlags").isInt(),
       BodyValidationMiddleware.verifyBodyFieldsErrors,
       UserMiddleware.validateSameEmailBelongToSameUser,
+      permissionMiddleware.onlySameUserOrAdminCanDoThisAction,
+      permissionMiddleware.permissionFlagsRequired(
+        PermissionFlag.PAID_PERMISSION
+      ),
       UserController.put,
     ]);
 
@@ -56,6 +73,10 @@ export class UserRoutes extends CommonRoutesConfig {
       body("permissionFlags").isInt().optional(),
       BodyValidationMiddleware.verifyBodyFieldsErrors,
       UserMiddleware.validatePatchEmail,
+      permissionMiddleware.onlySameUserOrAdminCanDoThisAction,
+      permissionMiddleware.permissionFlagsRequired(
+        PermissionFlag.PAID_PERMISSION
+      ),
       UserController.patch,
     ]);
 
