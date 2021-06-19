@@ -1,7 +1,7 @@
 {
   "name": "rest-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "A REST API with Express and MongoDB",
   "main": "app.js",
   "scripts": {
     "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
