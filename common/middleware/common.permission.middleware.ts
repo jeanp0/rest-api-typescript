@@ -12,6 +12,7 @@ class PermissionMiddleware {
       next: express.NextFunction
     ) => {
       try {
+        console.log(res.locals.jwt.permissionFlags);
         const userPermissionFlags = parseInt(res.locals.jwt.permissionFlags);
         if (userPermissionFlags & requiredPermissionFlag) {
           return next();

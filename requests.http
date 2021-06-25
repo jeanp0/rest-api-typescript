@@ -1,6 +1,6 @@
 GET http://localhost:3000/users
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJJQmNZT2pGelYiLCJlbWFpbCI6ImplYW5waWVybUBlbWFpbC5jb20iLCJwZXJtaXNzaW9uRmxhZ3MiOjEsInJlZnJlc2hLZXkiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOlsxNCwyMzYsMjUyLDE0MSwyNTEsMTE1LDc4LDY0LDIxNSwxMiw3MCw4NiwxMDksMTE4LDE5NSwxNzJdfSwiaWF0IjoxNjIzNzAxODgwLCJleHAiOjE2MjM3Mzc4ODB9.wdX6eknXVwUpKPMLqZp-07AS8JTg8_L04QHcGrChxuA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3S2ZDQ0QtMEwiLCJlbWFpbCI6ImplYW5waWVyQGVtYWlsLmNvbSIsInBlcm1pc3Npb25GbGFncyI6OCwicmVmcmVzaEtleSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6WzY5LDExMSwxODMsMjIzLDEzLDIzMSwyMjAsMjM0LDE0LDE2MCw3NiwxLDIyNSw4NiwxNzQsODddfSwiaWF0IjoxNjI0MTY1MjcyLCJleHAiOjE2MjQyMDEyNzJ9.tA9bJTzoLTz_wW9q9uJn32ophjFVYHApvki2gVitIVw
 
 ###
 
@@ -15,7 +15,7 @@ content-type: application/json
 
 {
   "password": "12345",
-  "email": "jeanpierm@email.com"
+  "email": "jeanpier@email.com"
 }
 
 ###
