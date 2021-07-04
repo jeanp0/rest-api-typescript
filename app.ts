@@ -1,20 +1,17 @@
 import dotenv from "dotenv";
-
 const dotenvResult = dotenv.config();
 if (dotenvResult.error) {
   throw dotenvResult.error;
 }
-
-import express from "express";
-import * as http from "http";
-
-import * as winston from "winston";
-import * as expressWinston from "express-winston";
 import cors from "cors";
+import debug from "debug";
+import express from "express";
+import * as expressWinston from "express-winston";
+import * as http from "http";
+import * as winston from "winston";
+import { AuthRoutes } from "./auth/auth.routes.config";
 import { CommonRoutesConfig } from "./common/common.routes.config";
 import { UserRoutes } from "./users/user.routes.config";
-import { AuthRoutes } from "./auth/auth.routes.config";
-import debug from "debug";
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
