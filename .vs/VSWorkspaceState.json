@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\auth",
+    "\\auth\\controllers",
+    "\\auth\\middleware",
+    "\\tests",
+    "\\users",
+    "\\users\\controllers",
+    "\\users\\dao",
+    "\\users\\middleware",
+    "\\users\\services"
+  ],
+  "SelectedNode": "\\users\\user.routes.config.ts",
+  "PreviewInSolutionExplorer": false
+}
